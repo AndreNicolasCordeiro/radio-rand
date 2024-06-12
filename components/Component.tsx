@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 
 export default function Component() {
   return (
@@ -171,9 +170,9 @@ export default function Component() {
               <div className="bg-white dark:bg-gray-700 rounded-lg p-6 text-left">
                 <blockquote className="mb-4">
                   <p className="text-gray-700 dark:text-gray-400 italic">
-                    "Adoro sintonizar na rádio da escola! Os apresentadores são
+                    Adoro sintonizar na rádio da escola! Os apresentadores são
                     tão envolventes, e sempre descubro novas músicas que não
-                    encontraria de outra forma."
+                    encontraria de outra forma.
                   </p>
                 </blockquote>
                 <div className="flex items-center">
@@ -193,9 +192,9 @@ export default function Component() {
               <div className="bg-white dark:bg-gray-700 rounded-lg p-6 text-left">
                 <blockquote className="mb-4">
                   <p className="text-gray-700 dark:text-gray-400 italic">
-                    "A rádio da escola é uma ótima maneira de me manter
+                    A rádio da escola é uma ótima maneira de me manter
                     conectado com a comunidade. Sempre sintonizo para obter as
-                    últimas atualizações sobre eventos e atividades."
+                    últimas atualizações sobre eventos e atividades.
                   </p>
                 </blockquote>
                 <div className="flex items-center">
@@ -215,9 +214,9 @@ export default function Component() {
               <div className="bg-white dark:bg-gray-700 rounded-lg p-6 text-left">
                 <blockquote className="mb-4">
                   <p className="text-gray-700 dark:text-gray-400 italic">
-                    "A rádio da escola é uma plataforma fantástica para nossos
+                    A rádio da escola é uma plataforma fantástica para nossos
                     alunos mostrarem seus talentos e compartilharem suas paixões
-                    com a comunidade."
+                    com a comunidade.
                   </p>
                 </blockquote>
                 <div className="flex items-center">
