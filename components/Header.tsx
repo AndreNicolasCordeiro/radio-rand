@@ -1,13 +1,14 @@
 import { RadioReceiverIcon } from "lucide-react"
 import Link from "next/link"
 import { Button } from "./ui/button"
+import { MovingBorderDemo } from "./ui/moving-border-beta"
 
 const Header = () => {
     return (
         <>
-        <header className=" bg-gray-900 text-white py-4 px-6 md:px-8 flex items-center justify-between">
+        <header className="bg-[#487175] text-white py-4 px-6 md:px-8 flex items-center justify-between">
           <div className="container flex justify-between">
-        <Link href="#" className="flex items-center gap-2" prefetch={false}>
+        <Link href="/" className="flex items-center gap-2" prefetch={false}>
           <RadioReceiverIcon className="h-8 w-8" />
           <span className="text-xl font-bold">RAND</span>
         </Link>
@@ -27,6 +28,7 @@ const Header = () => {
           <Link href="#contato" className="hover:underline" prefetch={false}>
             Contato
           </Link>
+
         </nav>
         <Button className="md:hidden">Menu</Button>
         </div>

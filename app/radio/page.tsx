@@ -2,8 +2,9 @@
 
 import React, { useEffect, useRef, useState, MutableRefObject } from "react";
 import { Button } from "@/components/ui/button";
-import { Loader2Icon, RadioReceiverIcon, Volume } from "lucide-react";
+import { Loader2Icon, Volume } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 const AudioVisualizer: React.FC<{
     barColor?: string;
@@ -104,8 +105,8 @@ const AudioVisualizer: React.FC<{
     }, []);
   
     return (
-      <div className="flex flex-col items-center justify-center h-screen bg-gray-800 lg:bg-gray-900 text-white w-full">
-        <div className="flex-col content-center h-full lg:h-[28rem] w-full max-w-md p-6 bg-gray-800 rounded-lg lg:shadow-lg">
+      <div className="flex flex-col items-center justify-center h-screen bg-primary lg:bg-[#2f4f52] text-white w-full">
+        <div className="flex-col content-center h-screen lg:h-[28rem] w-full max-w-md p-6 bg-primary rounded-lg lg:shadow-lg">
           <div className="flex items-center justify-between mb-4">
             <h2 className="text-2xl font-bold">Ao vivo</h2>
             <div className="flex items-center gap-2">
@@ -126,9 +127,12 @@ const AudioVisualizer: React.FC<{
             </div>
           </div>
           <div className="flex flex-col items-center mb-6">
-            <img
+            <Image
               src="/neusadomit.jpg"
               alt="Album Cover"
+              width={0}
+              height={0}
+              sizes="100vw"
               className={`w-40 h-40 rounded-full object-cover mb-4 ${isPlaying ? "animate-spin-slow" : ""}`}
             />
             <h3 className="text-xl font-bold mb-2">RAND</h3>

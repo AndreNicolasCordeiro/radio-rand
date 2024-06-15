@@ -1,9 +1,10 @@
 import { RadioReceiverIcon } from "lucide-react"
 import Link from "next/link"
 
+//gray-900 cor inicial
 export default function Footer() {
   return (
-    <footer className="p-6 md:py-12 w-full bg-gray-900">
+    <footer className="p-6 md:py-12 w-full bg-primary">
       <div className="container max-w-7xl flex flex-col items-center justify-between gap-6 sm:flex-row">
         <Link href="#" className="flex items-center gap-2" prefetch={false}>
         <RadioReceiverIcon className="h-8 w-8 text-white" />
@@ -26,7 +27,7 @@ export default function Footer() {
             Contato
           </Link>
         </nav>
-        <p className="text-xs text-gray-500 dark:text-gray-400">&copy; 2024 RAND - Rádio Ativa Neusa Domit. Todos os direitos reservados.</p>
+        <p className="text-xs text-gray-200">&copy; 2024 RAND - Rádio Ativa Neusa Domit. Todos os direitos reservados.</p>
       </div>
     </footer>
   )
