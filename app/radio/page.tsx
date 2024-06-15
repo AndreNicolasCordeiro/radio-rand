@@ -106,6 +106,7 @@ const AudioVisualizer: React.FC<{
   
     return (
       <div className="flex flex-col items-center justify-center h-screen bg-primary lg:bg-[#2f4f52] text-white w-full">
+        
         <div className="flex-col content-center h-screen lg:h-[28rem] w-full max-w-md p-6 bg-primary rounded-lg lg:shadow-lg">
           <div className="flex items-center justify-between mb-4">
             <h2 className="text-2xl font-bold">Ao vivo</h2>

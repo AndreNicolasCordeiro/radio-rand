@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <footer className="p-6 md:py-12 w-full bg-primary">
       <div className="container max-w-7xl flex flex-col items-center justify-between gap-6 sm:flex-row">
-        <Link href="#" className="flex items-center gap-2" prefetch={false}>
+        <Link href="/" className="flex items-center gap-2" prefetch={false}>
         <RadioReceiverIcon className="h-8 w-8 text-white" />
           <span className="text-white">RAND</span>
         </Link>
