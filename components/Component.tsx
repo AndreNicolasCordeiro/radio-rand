@@ -503,7 +503,7 @@ export default function Component() {
             <p className="text-gray-400 mb-4">
               Fique ligado diariamente em nossa programação!
             </p>
-            <div className="flex gap-2">
+            <div className="flex gap-2 justify-center md:justify-start">
               <Link href="/radio">
                 <MovingBorderDemo />
               </Link>
