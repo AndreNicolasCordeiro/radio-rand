@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Rádio - RAND",
   description: "A rádio do colégio Neusa Domit, ouça agora 24 horas ativa!",
-  manifest: '/site.webmanifest',
+  manifest: '/manifest.webmanifest',
   icons: {
     icon: ['/favicon.ico?v=4'],
     apple: ['/apple-touch-icon.png?v=4'],
