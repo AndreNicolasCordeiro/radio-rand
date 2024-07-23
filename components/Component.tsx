@@ -2,9 +2,15 @@ import Link from "next/link";
 import Image from "next/image";
 import { MovingBorderDemo } from "./ui/moving-border-beta";
 
-import { Card, CardContent } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel"
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselPrevious,
+  CarouselNext,
+} from "@/components/ui/carousel";
 
 export default function Component() {
   return (
@@ -27,7 +33,10 @@ export default function Component() {
           className="container py-16 md:py-24 px-6 md:px-8 grid grid-cols-1 md:grid-cols-2 gap-8"
         >
           <div className="flex flex-col justify-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary" id="sobre">
+            <h2
+              className="text-3xl md:text-4xl font-bold mb-4 text-primary"
+              id="sobre"
+            >
               Sobre o colégio
             </h2>
             <p className="text-gray-700 dark:text-gray-400 mb-8">
@@ -55,241 +64,263 @@ export default function Component() {
           className="bg-gray-100 dark:bg-gray-800 py-16 md:py-24 px-6 md:px-8"
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 container mx-auto py-12 items-center">
-      <div className="space-y-6">
-        <div className="space-y-2">
-          <h2 className="text-3xl font-bold tracking-tighter text-primary">Muito mais do que uma rádio</h2>
-          <p className="text-gray-500 dark:text-gray-400 max-w-md">
-          A Rádio Ativa Neusa Domit é uma Web Rádio eclética, oferecendo uma diversificada programação musical e cultural voltada para o segmento estudantil. Nosso objetivo é difundir e estimular a participação dos alunos, tanto de forma direta quanto indireta, por meio de programas variados em nossa grade, incluindo transmissões ao vivo e gravações no formato de podcast. Junte-se a nós para desfrutar de uma experiência radiofônica envolvente e promover a expressão criativa dos estudantes.
-          </p>
-        </div>
-      </div>
-      <div className="relative">
-        <Carousel className="rounded-lg overflow-hidden">
-          <CarouselContent>
-            <CarouselItem>
-            <Image
-                src="/imagem01.jpg"
-                width={0}
-                height={0}
-                sizes="100vw"
-                alt="Product 1"
-                className="w-full h-full rounded-md object-cover aspect-[4/3]"
-              />
-            </CarouselItem>
-            <CarouselItem>
-            <Image
-                src="/imagem02.jpg"
-                width={0}
-                height={0}
-                sizes="100vw"
-                alt="Product 1"
-                className="w-full h-full rounded-md object-cover aspect-[4/3]"
-              />
-            </CarouselItem>
-            <CarouselItem>
-            <Image
-                src="/imagem03.jpg"
-                width={0}
-                height={0}
-                sizes="100vw"
-                alt="Product 1"
-                className="w-full h-full rounded-md object-cover aspect-[4/3]"
-              />
-            </CarouselItem>
-            <CarouselItem>
-            <Image
-                src="/imagem04.jpg"
-                width={0}
-                height={0}
-                sizes="100vw"
-                alt="Product 1"
-                className="w-full h-full rounded-md object-cover aspect-[4/3]"
-              />
-            </CarouselItem>
-            <CarouselItem>
-            <Image
-                src="/imagem05.jpg"
-                width={0}
-                height={0}
-                sizes="100vw"
-                alt="Product 1"
-                className="w-full h-full rounded-md object-cover aspect-[4/3]"
-              />
-            </CarouselItem>
-            <CarouselItem>
-            <Image
-                src="/imagem06.jpg"
-                width={0}
-                height={0}
-                sizes="100vw"
-                alt="Product 1"
-                className="w-full h-full rounded-md object-cover aspect-[4/3]"
-              />
-            </CarouselItem>
-            <CarouselItem>
-            <Image
-                src="/imagem06.jpg"
-                width={0}
-                height={0}
-                sizes="100vw"
-                alt="Product 1"
-                className="w-full h-full rounded-md object-cover aspect-[4/3]"
-              />
-            </CarouselItem>
-            <CarouselItem>
-            <Image
-                src="/imagem08.jpg"
-                width={0}
-                height={0}
-                sizes="100vw"
-                alt="Product 1"
-                className="w-full h-full rounded-md object-cover aspect-[4/3]"
-              />
-            </CarouselItem>
-            <CarouselItem>
-            <Image
-                src="/imagem09.jpg"
-                width={0}
-                height={0}
-                sizes="100vw"
-                alt="Product 1"
-                className="w-full h-full rounded-md object-cover aspect-[4/3]"
-              />
-            </CarouselItem>
-            <CarouselItem>
-            <Image
-                src="/imagem10.jpg"
-                width={0}
-                height={0}
-                sizes="100vw"
-                alt="Product 1"
-                className="w-full h-full rounded-md object-cover aspect-[4/3]"
-              />
-            </CarouselItem>
-            <CarouselItem>
-            <Image
-                src="/imagem11.jpg"
-                width={0}
-                height={0}
-                sizes="100vw"
-                alt="Product 1"
-                className="w-full h-full rounded-md object-cover aspect-[4/3]"
-              />
-            </CarouselItem>
-            <CarouselItem>
-            <Image
-                src="/imagem12.jpg"
-                width={0}
-                height={0}
-                sizes="100vw"
-                alt="Product 1"
-                className="w-full h-full rounded-md object-cover aspect-[4/3]"
-              />
-            </CarouselItem>
-            <CarouselItem>
-            <Image
-                src="/imagem13.jpg"
-                width={0}
-                height={0}
-                sizes="100vw"
-                alt="Product 1"
-                className="w-full h-full rounded-md object-cover aspect-[4/3]"
-              />
-            </CarouselItem>
-            <CarouselItem>
-            <Image
-                src="/imagem14.jpg"
-                width={0}
-                height={0}
-                sizes="100vw"
-                alt="Product 1"
-                className="w-full h-full rounded-md object-cover aspect-[4/3]"
-              />
-            </CarouselItem>
-            <CarouselItem>
-            <Image
-                src="/imagem15.jpg"
-                width={0}
-                height={0}
-                sizes="100vw"
-                alt="Product 1"
-                className="w-full h-full rounded-md object-cover aspect-[4/3]"
-              />
-            </CarouselItem>
-            <CarouselItem>
-            <Image
-                src="/imagem16.jpg"
-                width={0}
-                height={0}
-                sizes="100vw"
-                alt="Product 1"
-                className="w-full h-full rounded-md object-cover aspect-[4/3]"
-              />
-            </CarouselItem>
-
-          </CarouselContent>
-          <CarouselPrevious className="absolute top-1/2 left-4 -translate-y-1/2 z-10 text-gray-900 dark:text-gray-50 hover:text-gray-950 dark:hover:text-gray-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-950 dark:focus-visible:ring-gray-300">
-            <ChevronLeftIcon className="w-6 h-6" />
-          </CarouselPrevious>
-          <CarouselNext className="absolute top-1/2 right-4 -translate-y-1/2 z-10 text-gray-900 dark:text-gray-50 hover:text-gray-950 dark:hover:text-gray-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-950 dark:focus-visible:ring-gray-300">
-            <ChevronRightIcon className="w-6 h-6" />
-          </CarouselNext>
-        </Carousel>
-      </div>
-    </div>
-
-    <div className="container flex flex-col lg:flex-row gap-4">
-          <Card>
-            <CardContent className="p-4 flex flex-col gap-4">
-              <Image
-                src="/imagem09.jpg"
-                width={0}
-                height={0}
-                sizes="100vw"
-                alt="Product 1"
-                className="w-full h-full rounded-md object-cover aspect-[4/3]"
-              />
-              <div className="space-y-1">
-                <h3 className="text-lg font-semibold text-primary">Notícias & Atualizações</h3>
-                <p className="text-gray-500 dark:text-gray-400 text-sm">Mantenha-se atualizado com as últimas notícias e eventos acontecendo em nossa comunidade escolar.</p>
+            <div className="space-y-6">
+              <div className="space-y-2">
+                <h2 className="text-3xl font-bold tracking-tighter text-primary">
+                  Muito mais do que uma rádio
+                </h2>
+                <p className="text-gray-500 dark:text-gray-400 max-w-md">
+                  A Rádio Ativa Neusa Domit é uma Web Rádio eclética, oferecendo
+                  uma diversificada programação musical e cultural voltada para
+                  o segmento estudantil. Nosso objetivo é difundir e estimular a
+                  participação dos alunos, tanto de forma direta quanto
+                  indireta, por meio de programas variados em nossa grade,
+                  incluindo transmissões ao vivo e gravações no formato de
+                  podcast. Junte-se a nós para desfrutar de uma experiência
+                  radiofônica envolvente e promover a expressão criativa dos
+                  estudantes.
+                </p>
               </div>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardContent className="p-4 flex flex-col gap-4">
-              <Image
-                src="/imagem01.jpg"
-                width={0}
-                height={0}
-                sizes="100vw"
-                alt="Product 1"
-                className="w-full h-full rounded-md object-cover aspect-[4/3]"
-              />
-              <div className="space-y-1">
-                <h3 className="text-lg font-semibold text-primary">Música & Entreterimento</h3>
-                <p className="text-gray-500 dark:text-gray-400 text-sm">Descubra novas músicas, ouça playlists selecionadas pelos alunos e desfrute de uma variedade de programas divertidos.</p>
-              </div>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardContent className="p-4 flex flex-col gap-4">
-              <Image
-                src="/imagem05.jpg"
-                width={0}
-                height={0}
-                sizes="100vw"
-                alt="Product 1"
-                className="w-full h-full rounded-md object-cover aspect-[4/3]"
-              />
-              <div className="space-y-1">
-                <h3 className="text-lg font-semibold text-primary">Esportes & Atividades</h3>
-                <p className="text-gray-500 dark:text-gray-400 text-sm">Receba as últimas atualizações sobre as equipes esportivas e atividades extracurriculares de nossa escola.</p>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
+            </div>
+            <div className="relative">
+              <Carousel className="rounded-lg overflow-hidden">
+                <CarouselContent>
+                  <CarouselItem>
+                    <Image
+                      src="/imagem01.jpg"
+                      width={0}
+                      height={0}
+                      sizes="100vw"
+                      alt="Product 1"
+                      className="w-full h-full rounded-md object-cover aspect-[4/3]"
+                    />
+                  </CarouselItem>
+                  <CarouselItem>
+                    <Image
+                      src="/imagem02.jpg"
+                      width={0}
+                      height={0}
+                      sizes="100vw"
+                      alt="Product 1"
+                      className="w-full h-full rounded-md object-cover aspect-[4/3]"
+                    />
+                  </CarouselItem>
+                  <CarouselItem>
+                    <Image
+                      src="/imagem03.jpg"
+                      width={0}
+                      height={0}
+                      sizes="100vw"
+                      alt="Product 1"
+                      className="w-full h-full rounded-md object-cover aspect-[4/3]"
+                    />
+                  </CarouselItem>
+                  <CarouselItem>
+                    <Image
+                      src="/imagem04.jpg"
+                      width={0}
+                      height={0}
+                      sizes="100vw"
+                      alt="Product 1"
+                      className="w-full h-full rounded-md object-cover aspect-[4/3]"
+                    />
+                  </CarouselItem>
+                  <CarouselItem>
+                    <Image
+                      src="/imagem05.jpg"
+                      width={0}
+                      height={0}
+                      sizes="100vw"
+                      alt="Product 1"
+                      className="w-full h-full rounded-md object-cover aspect-[4/3]"
+                    />
+                  </CarouselItem>
+                  <CarouselItem>
+                    <Image
+                      src="/imagem06.jpg"
+                      width={0}
+                      height={0}
+                      sizes="100vw"
+                      alt="Product 1"
+                      className="w-full h-full rounded-md object-cover aspect-[4/3]"
+                    />
+                  </CarouselItem>
+                  <CarouselItem>
+                    <Image
+                      src="/imagem06.jpg"
+                      width={0}
+                      height={0}
+                      sizes="100vw"
+                      alt="Product 1"
+                      className="w-full h-full rounded-md object-cover aspect-[4/3]"
+                    />
+                  </CarouselItem>
+                  <CarouselItem>
+                    <Image
+                      src="/imagem08.jpg"
+                      width={0}
+                      height={0}
+                      sizes="100vw"
+                      alt="Product 1"
+                      className="w-full h-full rounded-md object-cover aspect-[4/3]"
+                    />
+                  </CarouselItem>
+                  <CarouselItem>
+                    <Image
+                      src="/imagem09.jpg"
+                      width={0}
+                      height={0}
+                      sizes="100vw"
+                      alt="Product 1"
+                      className="w-full h-full rounded-md object-cover aspect-[4/3]"
+                    />
+                  </CarouselItem>
+                  <CarouselItem>
+                    <Image
+                      src="/imagem10.jpg"
+                      width={0}
+                      height={0}
+                      sizes="100vw"
+                      alt="Product 1"
+                      className="w-full h-full rounded-md object-cover aspect-[4/3]"
+                    />
+                  </CarouselItem>
+                  <CarouselItem>
+                    <Image
+                      src="/imagem11.jpg"
+                      width={0}
+                      height={0}
+                      sizes="100vw"
+                      alt="Product 1"
+                      className="w-full h-full rounded-md object-cover aspect-[4/3]"
+                    />
+                  </CarouselItem>
+                  <CarouselItem>
+                    <Image
+                      src="/imagem12.jpg"
+                      width={0}
+                      height={0}
+                      sizes="100vw"
+                      alt="Product 1"
+                      className="w-full h-full rounded-md object-cover aspect-[4/3]"
+                    />
+                  </CarouselItem>
+                  <CarouselItem>
+                    <Image
+                      src="/imagem13.jpg"
+                      width={0}
+                      height={0}
+                      sizes="100vw"
+                      alt="Product 1"
+                      className="w-full h-full rounded-md object-cover aspect-[4/3]"
+                    />
+                  </CarouselItem>
+                  <CarouselItem>
+                    <Image
+                      src="/imagem14.jpg"
+                      width={0}
+                      height={0}
+                      sizes="100vw"
+                      alt="Product 1"
+                      className="w-full h-full rounded-md object-cover aspect-[4/3]"
+                    />
+                  </CarouselItem>
+                  <CarouselItem>
+                    <Image
+                      src="/imagem15.jpg"
+                      width={0}
+                      height={0}
+                      sizes="100vw"
+                      alt="Product 1"
+                      className="w-full h-full rounded-md object-cover aspect-[4/3]"
+                    />
+                  </CarouselItem>
+                  <CarouselItem>
+                    <Image
+                      src="/imagem16.jpg"
+                      width={0}
+                      height={0}
+                      sizes="100vw"
+                      alt="Product 1"
+                      className="w-full h-full rounded-md object-cover aspect-[4/3]"
+                    />
+                  </CarouselItem>
+                </CarouselContent>
+                <CarouselPrevious className="absolute top-1/2 left-4 -translate-y-1/2 z-10 text-gray-900 dark:text-gray-50 hover:text-gray-950 dark:hover:text-gray-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-950 dark:focus-visible:ring-gray-300">
+                  <ChevronLeftIcon className="w-6 h-6" />
+                </CarouselPrevious>
+                <CarouselNext className="absolute top-1/2 right-4 -translate-y-1/2 z-10 text-gray-900 dark:text-gray-50 hover:text-gray-950 dark:hover:text-gray-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-950 dark:focus-visible:ring-gray-300">
+                  <ChevronRightIcon className="w-6 h-6" />
+                </CarouselNext>
+              </Carousel>
+            </div>
+          </div>
 
-
+          <div className="container flex flex-col lg:flex-row gap-4">
+            <Card>
+              <CardContent className="p-4 flex flex-col gap-4">
+                <Image
+                  src="/imagem09.jpg"
+                  width={0}
+                  height={0}
+                  sizes="100vw"
+                  alt="Product 1"
+                  className="w-full h-full rounded-md object-cover aspect-[4/3]"
+                />
+                <div className="space-y-1">
+                  <h3 className="text-lg font-semibold text-primary">
+                    Notícias & Atualizações
+                  </h3>
+                  <p className="text-gray-500 dark:text-gray-400 text-sm">
+                    Mantenha-se atualizado com as últimas notícias e eventos
+                    acontecendo em nossa comunidade escolar.
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardContent className="p-4 flex flex-col gap-4">
+                <Image
+                  src="/imagem01.jpg"
+                  width={0}
+                  height={0}
+                  sizes="100vw"
+                  alt="Product 1"
+                  className="w-full h-full rounded-md object-cover aspect-[4/3]"
+                />
+                <div className="space-y-1">
+                  <h3 className="text-lg font-semibold text-primary">
+                    Música & Entreterimento
+                  </h3>
+                  <p className="text-gray-500 dark:text-gray-400 text-sm">
+                    Descubra novas músicas, ouça playlists selecionadas pelos
+                    alunos e desfrute de uma variedade de programas divertidos.
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardContent className="p-4 flex flex-col gap-4">
+                <Image
+                  src="/imagem05.jpg"
+                  width={0}
+                  height={0}
+                  sizes="100vw"
+                  alt="Product 1"
+                  className="w-full h-full rounded-md object-cover aspect-[4/3]"
+                />
+                <div className="space-y-1">
+                  <h3 className="text-lg font-semibold text-primary">
+                    Esportes & Atividades
+                  </h3>
+                  <p className="text-gray-500 dark:text-gray-400 text-sm">
+                    Receba as últimas atualizações sobre as equipes esportivas e
+                    atividades extracurriculares de nossa escola.
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
         </section>
         <section id="presenters" className="py-16 md:py-24 px-6 md:px-8">
           <div className="max-w-3xl mx-auto text-center">
@@ -304,7 +335,7 @@ export default function Component() {
               únicas e expertise para as ondas do rádio, garantindo uma
               experiência auditiva envolvente e informativa.
             </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 gap-6">
               <div className="bg-white dark:bg-gray-700 rounded-lg p-6 text-left">
                 <Image
                   src="/neusadomit.jpg"
@@ -314,51 +345,20 @@ export default function Component() {
                   height={0}
                   sizes="100vw"
                 />
-                <h3 className="text-xl font-bold mb-2 text-primary">John Doe</h3>
+                <h3 className="text-xl font-bold mb-2 text-primary">
+                  José Eduardo Linhares Ecks
+                </h3>
                 <p className="text-gray-700 dark:text-gray-400">
-                  Apresentador do Programa Matinal
+                  Apresentador do Programa Matinal, com os programas
+                  &quot;Gêneros&quot; na segunda às 10:00 e &quot;Velharia&quot;
+                  na sexta-feira às 10:00.
                 </p>
                 <p className="text-gray-700 dark:text-gray-400 mt-2">
-                  John é um entusiasta apaixonado por rádio, com uma vasta
-                  experiência na indústria. Ele traz uma personalidade animada e
-                  envolvente para as ondas do rádio.
-                </p>
-              </div>
-              <div className="bg-white dark:bg-gray-700 rounded-lg p-6 text-left">
-                <Image
-                  src="/neusadomit.jpg"
-                  alt="Fachada Colégio Neusa Domit"
-                  className="rounded-full w-24 h-24 mb-4"
-                  width={0}
-                  height={0}
-                  sizes="100vw"
-                />
-                <h3 className="text-xl font-bold mb-2 text-primary">Jane Smith</h3>
-                <p className="text-gray-700 dark:text-gray-400">
-                  Apresentador da Playlist da Tarde
-                </p>
-                <p className="text-gray-700 dark:text-gray-400 mt-2">
-                  Jane é uma entusiasta da música que cria uma mistura eclética
-                  de canções para manter os ouvintes entretidos ao longo do dia.
-                </p>
-              </div>
-              <div className="bg-white dark:bg-gray-700 rounded-lg p-6 text-left">
-                <Image
-                  src="/neusadomit.jpg"
-                  alt="Fachada Colégio Neusa Domit"
-                  className="rounded-full w-24 h-24 mb-4"
-                  width={0}
-                  height={0}
-                  sizes="100vw"
-                />
-                <h3 className="text-xl font-bold mb-2 text-primary">Michael Johnson</h3>
-                <p className="text-gray-700 dark:text-gray-400">
-                  Apresentador do Resumo Esportivo
-                </p>
-                <p className="text-gray-700 dark:text-gray-400 mt-2">
-                  Michael é um fanático por esportes que mantém os ouvintes
-                  atualizados com as últimas notícias e destaques dos programas
-                  esportivos de nossa escola.
+                  Tenho trabalhado de radialista a cerca de 1 ano e meio, e como
+                  produtor Musical a mais de 3 anos. Para mim trabalhar com a
+                  RAND é meu ponto de fuga, quando estou fazendo meus programas,
+                  tocando músicas que são de meu gosto, me sinto
+                  mais leve e alegre.
                 </p>
               </div>
             </div>
@@ -379,13 +379,25 @@ export default function Component() {
               Escute o que nossos ouvintes satisfeitos têm a dizer sobre sua
               experiência com nossa estação de rádio escolar.
             </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 gap-6">
               <div className="bg-white dark:bg-gray-700 rounded-lg p-6 text-left">
                 <blockquote className="mb-4">
                   <p className="text-gray-700 dark:text-gray-400 italic">
-                    Adoro sintonizar na rádio da escola! Os apresentadores são
-                    tão envolventes, e sempre descubro novas músicas que não
-                    encontraria de outra forma.
+                    Ah, falar da RAND é vivenciar o sonho que se realizou
+                    através dos meus amigos Vanderlei e Paulek. Trabalho no
+                    Colégio há seis anos e vi uma sala, que era usada somente
+                    para depósito de equipamentos, aos poucos se transformar na
+                    Rádio Ativa Neusa Domit. O objetivo é engajar os alunos
+                    junto à comunidade escolar, e assim está sendo. Mas o mais
+                    importante é a interação e a comunicação em tempo real com a
+                    comunidade. Com o tempo, foram surgindo mais parcerias e
+                    maior engajamento de alunos, professores, direção e
+                    funcionários. O projeto foi crescendo e ganhando novas
+                    dimensões: entrevistas, podcasts e interações. A RAND elevou
+                    a autoestima dos alunos, promovendo inclusão social e
+                    melhorando a capacidade de comunicação e relações. A RAND
+                    oferece uma gama de programas, é minha rádio favorita e veio
+                    pra ficar!
                   </p>
                 </blockquote>
                 <div className="flex items-center">
@@ -398,59 +410,41 @@ export default function Component() {
                     sizes="100vw"
                   />
                   <div>
-                    <h4 className="text-lg font-bold text-primary">Sarah Johnson</h4>
-                    <p className="text-gray-700 dark:text-gray-400">
-                      Estudante
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="bg-white dark:bg-gray-700 rounded-lg p-6 text-left">
-                <blockquote className="mb-4">
-                  <p className="text-gray-700 dark:text-gray-400 italic">
-                    A rádio da escola é uma ótima maneira de me manter conectado
-                    com a comunidade. Sempre sintonizo para obter as últimas
-                    atualizações sobre eventos e atividades.
-                  </p>
-                </blockquote>
-                <div className="flex items-center">
-                  <Image
-                    src="/neusadomit.jpg"
-                    alt="Fachada Colégio Neusa Domit"
-                    className="rounded-full w-12 h-12 mr-4"
-                    width={0}
-                    height={0}
-                    sizes="100vw"
-                  />
-                  <div>
-                    <h4 className="text-lg font-bold text-primary">Michael Lee</h4>
-                    <p className="text-gray-700 dark:text-gray-400">
-                      Estudante
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="bg-white dark:bg-gray-700 rounded-lg p-6 text-left">
-                <blockquote className="mb-4">
-                  <p className="text-gray-700 dark:text-gray-400 italic">
-                    A rádio da escola é uma plataforma fantástica para nossos
-                    alunos mostrarem seus talentos e compartilharem suas paixões
-                    com a comunidade.
-                  </p>
-                </blockquote>
-                <div className="flex items-center">
-                  <Image
-                    src="/neusadomit.jpg"
-                    alt="Fachada Colégio Neusa Domit"
-                    className="rounded-full w-12 h-12 mr-4"
-                    width={0}
-                    height={0}
-                    sizes="100vw"
-                  />
-                  <div>
-                    <h4 className="text-lg font-bold text-primary">Emily Davis</h4>
+                    <h4 className="text-lg font-bold text-primary">
+                      Rosane Sousa
+                    </h4>
                     <p className="text-gray-700 dark:text-gray-400">
                       Professora
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="bg-white dark:bg-gray-700 rounded-lg p-6 text-left">
+                <blockquote className="mb-4">
+                  <p className="text-gray-700 dark:text-gray-400 italic">
+                    Sou ex-radialista da Rádio Neusa Domit, no qual tem um
+                    desempenho fundamental no desenvolvimento do nosso bairro e
+                    comunidade. A rádio oferece uma variedade de programas
+                    divertidos e interessantes, incluindo um programa de
+                    esportes. A equipe é altamente organizada e se dedica a
+                    entreter todos os ouvintes. A Rádio Neusa Domit também
+                    fornece informações reais e relevantes, tornando-se uma
+                    fonte confiável para todos.
+                  </p>
+                </blockquote>
+                <div className="flex items-center">
+                  <Image
+                    src="/neusadomit.jpg"
+                    alt="Fachada Colégio Neusa Domit"
+                    className="rounded-full w-12 h-12 mr-4"
+                    width={0}
+                    height={0}
+                    sizes="100vw"
+                  />
+                  <div>
+                    <h4 className="text-lg font-bold text-primary">Pedro</h4>
+                    <p className="text-gray-700 dark:text-gray-400">
+                      Estudante 8°B
                     </p>
                   </div>
                 </div>
@@ -511,7 +505,7 @@ export default function Component() {
             </p>
             <div className="flex gap-2">
               <Link href="/radio">
-              <MovingBorderDemo />
+                <MovingBorderDemo />
               </Link>
             </div>
           </div>
@@ -618,9 +612,8 @@ function ChevronLeftIcon(props: any) {
     >
       <path d="m15 18-6-6 6-6" />
     </svg>
-  )
+  );
 }
-
 
 function ChevronRightIcon(props: any) {
   return (
@@ -638,5 +631,5 @@ function ChevronRightIcon(props: any) {
     >
       <path d="m9 18 6-6-6-6" />
     </svg>
-  )
+  );
 }
