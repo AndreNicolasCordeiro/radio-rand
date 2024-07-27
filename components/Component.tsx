@@ -11,6 +11,7 @@ import {
   CarouselPrevious,
   CarouselNext,
 } from "@/components/ui/carousel";
+import { Mail, Youtube } from "lucide-react";
 
 export default function Component() {
   return (
@@ -361,6 +362,25 @@ export default function Component() {
                   mais leve e alegre.
                 </p>
               </div>
+              <div className="bg-white dark:bg-gray-700 rounded-lg p-6 text-left">
+                <Image
+                  src="/neusadomit.jpg"
+                  alt="Fachada Colégio Neusa Domit"
+                  className="rounded-full w-24 h-24 mb-4"
+                  width={0}
+                  height={0}
+                  sizes="100vw"
+                />
+                <h3 className="text-xl font-bold mb-2 text-primary">
+                  Carlos Alberto Paulek
+                </h3>
+                <p className="text-gray-700 dark:text-gray-400">
+                  Apresentador do Programa Raízes da Música, de segunda a sexta-feira das 19:00h às 20:30h
+                </p>
+                <p className="text-gray-700 dark:text-gray-400 mt-2">
+                Tenho a satisfação de apresentar o programa Raízes da Música. De segunda a sexta-feira, das 19:00 às 20:30, levo até vocês o melhor da música gaúcha, sertanejo e bandinhas do sul do Brasil. Com mais de 30 anos de dedicação ao Colégio Estadual Neusa Domit, encontro no meu programa de rádio uma fonte pura de diversão e alegria. É uma honra compartilhar essas tradições musicais com nossos ouvintes e fazer parte das suas noites. Sintonize e venha celebrar a nossa cultura comigo!
+                </p>
+              </div>
             </div>
           </div>
         </section>
@@ -465,13 +485,13 @@ export default function Component() {
               São Braz, União da Vitória - PR
             </p>
             <p className="text-gray-400 mb-2">
-              Telefone: (42) 9 9999 - 9999
+              WhatsApp: (42) 3524-3855
               <br />
-              Email: neusadomit@gmail.com
+              Email: radioneusadomit@gmail.com
             </p>
             <div className="flex gap-4 mt-4">
               <Link
-                href="https://www.facebook.com/profile.php?id=100038215399010"
+                href="https://www.facebook.com/profile.php?id=100090611147866&mibextid=ZbWKwL"
                 className="text-gray-400 hover:text-white"
                 prefetch={false}
               >
@@ -483,6 +503,20 @@ export default function Component() {
                 prefetch={false}
               >
                 <InstagramIcon className="h-6 w-6" />
+              </Link>
+              <Link
+                href="https://youtube.com/@RadioAtivaNeusaDomit?si=ORd_j8oegwggkNdG"
+                className="text-gray-400 hover:text-white"
+                prefetch={false}
+              >
+                <Youtube className="h-6 w-6" />
+              </Link>
+              <Link
+                href="mailto:radioneusadomit@gmail.com"
+                className="text-gray-400 hover:text-white"
+                prefetch={false}
+              >
+                <Mail className="h-6 w-6" />
               </Link>
             </div>
           </div>
