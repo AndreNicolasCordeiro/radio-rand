@@ -489,7 +489,7 @@ export default function Component() {
               <br />
               Email: radioneusadomit@gmail.com
             </p>
-            <div className="flex gap-4 mt-4">
+            <div className="flex gap-4 my-4">
               <Link
                 href="https://www.facebook.com/profile.php?id=100090611147866&mibextid=ZbWKwL"
                 className="text-gray-400 hover:text-white"
@@ -519,6 +519,7 @@ export default function Component() {
                 <Mail className="h-6 w-6" />
               </Link>
             </div>
+            <a href="http://play.radios.com.br/213965" target="_blank"> <Image src="https://img.radios.com.br/divulgue/app-radiosnet-234x60-a.jpg" alt="Ouça nossa rádio em seu celular ou tablet com Android ou no iPhone e iPads" width="234" height="60"/> </a>
           </div>
           <div>
             <h3 className="text-xl font-bold mb-4">Localização</h3>
