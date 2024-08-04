@@ -431,7 +431,7 @@ export default function Component() {
                   />
                   <div>
                     <h4 className="text-lg font-bold text-primary">
-                      Rosane Sousa
+                     Rosane Souza
                     </h4>
                     <p className="text-gray-700 dark:text-gray-400">
                       Professora
@@ -478,7 +478,7 @@ export default function Component() {
           <div>
             <h3 className="text-xl font-bold mb-4">Entre em contato</h3>
             <p className="text-gray-400 mb-2" id="contato">
-              Rádio ativa Neusa Domit
+              Rádio Ativa Neusa Domit
               <br />
               R. Wilson Alves, 680
               <br />
@@ -491,7 +491,7 @@ export default function Component() {
             </p>
             <div className="flex gap-4 my-4">
               <Link
-                href="https://www.facebook.com/profile.php?id=100090611147866&mibextid=ZbWKwL"
+                href="https://www.facebook.com/people/RAND-R%C3%A1dio-Ativa-Neusa-Domit/100090611147866/?mibextid=ZbWKwL"
                 className="text-gray-400 hover:text-white"
                 prefetch={false}
               >
@@ -533,7 +533,7 @@ export default function Component() {
           </div>
           <div>
             <h3 className="text-xl font-bold mb-4">
-              Acesse a rádio ativa RAND
+              Acesse a rádio Ativa RAND
             </h3>
             <p className="text-gray-400 mb-4">
               Fique ligado diariamente em nossa programação!
