@@ -1,9 +1,10 @@
+import { unstable_noStore } from "next/cache";
+
 import Link from "next/link";
 import Image from "next/image";
 import { MovingBorderDemo } from "./ui/moving-border-beta";
 
 import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import {
   Carousel,
   CarouselContent,
@@ -12,8 +13,83 @@ import {
   CarouselNext,
 } from "@/components/ui/carousel";
 import { Mail, Youtube } from "lucide-react";
+import client from "@/lib/contentful";
 
-export default function Component() {
+import { EntrySkeletonType } from "contentful";
+
+type SobreRadioSkeleton = EntrySkeletonType & {
+  fields: {
+    titulo: string;
+    descricao: string;
+  };
+};
+
+type Apresentador = {
+  fields: {
+    nome: string;
+    descricao: string;
+    imagem?: string;
+  };
+};
+
+type ApresentadoresSkeleton = EntrySkeletonType & {
+  fields: {
+    titulo: string;
+    descricao: string;
+    apresentadores: Apresentador[];
+  };
+};
+
+type Testemonial = {
+  fields: {
+    nome: string;
+    cargo: string;
+    opiniao: string;
+    imagem?: string;
+  };
+};
+
+type OpiniaoSkeleton = EntrySkeletonType & {
+  fields: {
+    titulo: string;
+    descricao: string;
+    opinioes: Testemonial[];
+  };
+};
+
+export default async function Component() {
+  unstable_noStore();
+  const entries = await client.getEntries();
+
+  const apresentadoresEntries = await client.getEntries<ApresentadoresSkeleton>(
+    {
+      content_type: "apresentadores",
+    }
+  );
+
+  const sessaoOpiniaoResponse = await client.getEntries<OpiniaoSkeleton>({
+    content_type: "sessaoOpiniao",
+  });
+
+  const sessaoOpiniao = sessaoOpiniaoResponse.items[0];
+
+  const sobre = entries.items.find(
+    (item) => item.sys.contentType.sys.id === "sobre"
+  );
+
+  const sobreRadioEntries = await client.getEntries<SobreRadioSkeleton>({
+    content_type: "sobreRadio",
+  });
+
+  const sobreRadio = sobreRadioEntries.items[0];
+
+  const apresentadores: Apresentador[] =
+    apresentadoresEntries.items[0]?.fields.apresentadores || [];
+
+  const opinioes: Testemonial[] = sessaoOpiniao?.fields.opinioes || [];
+  const tituloOpiniao = sessaoOpiniao?.fields.titulo || "";
+  const descricaoOpiniao = sessaoOpiniao?.fields.descricao || "";
+
   return (
     <div className="flex flex-col min-h-[100dvh]">
       <main className="flex-1">
@@ -38,17 +114,10 @@ export default function Component() {
               className="text-3xl md:text-4xl font-bold mb-4 text-primary"
               id="sobre"
             >
-              Sobre o colégio
+              {sobre?.fields.titulo as string}
             </h2>
             <p className="text-gray-700 dark:text-gray-400 mb-8">
-              O Colégio Estadual Neusa Domit, uma instituição de destaque no
-              Distrito de São Cristóvão, localizado no Bairro São Braz, em União
-              da Vitória, estado do Paraná, estabeleceu-se na Rua Wilson Alves,
-              680. Fundado na década de 1990, o colégio é reconhecido como uma
-              instituição estadual de ensino renomada. Oferecendo uma ampla gama
-              de programas educacionais, o colégio atende tanto à educação
-              fundamental, cobrindo os anos do 6º ao 9º ano, quanto ao ensino
-              médio/técnico, abrangendo os anos do 1º ao 3º ano.
+              {sobre?.fields.descricao as string}
             </p>
           </div>
           <Image
@@ -68,18 +137,10 @@ export default function Component() {
             <div className="space-y-6">
               <div className="space-y-2">
                 <h2 className="text-3xl font-bold tracking-tighter text-primary">
-                  Muito mais do que uma rádio
+                  {sobreRadio?.fields.titulo as string}
                 </h2>
                 <p className="text-gray-500 dark:text-gray-400 max-w-md">
-                  A Rádio Ativa Neusa Domit é uma Web Rádio eclética, oferecendo
-                  uma diversificada programação musical e cultural voltada para
-                  o segmento estudantil. Nosso objetivo é difundir e estimular a
-                  participação dos alunos, tanto de forma direta quanto
-                  indireta, por meio de programas variados em nossa grade,
-                  incluindo transmissões ao vivo e gravações no formato de
-                  podcast. Junte-se a nós para desfrutar de uma experiência
-                  radiofônica envolvente e promover a expressão criativa dos
-                  estudantes.
+                  {sobreRadio?.fields.descricao as string}
                 </p>
               </div>
             </div>
@@ -326,61 +387,45 @@ export default function Component() {
         <section id="presenters" className="py-16 md:py-24 px-6 md:px-8">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary">
-              Conheça Nossos Apresentadores
+              {apresentadoresEntries.items[0].fields.titulo}
             </h2>
             <p
               className="text-gray-700 dark:text-gray-400 mb-8"
               id="apresentadores"
             >
-              Nossa talentosa equipe de apresentadores traz suas personalidades
-              únicas e expertise para as ondas do rádio, garantindo uma
-              experiência auditiva envolvente e informativa.
+              {apresentadoresEntries.items[0].fields.descricao}
             </p>
             <div className="grid grid-cols-1 gap-6">
-              <div className="bg-white dark:bg-gray-700 rounded-lg p-6 text-left">
-                <Image
-                  src="/neusadomit.jpg"
-                  alt="Fachada Colégio Neusa Domit"
-                  className="rounded-full w-24 h-24 mb-4"
-                  width={0}
-                  height={0}
-                  sizes="100vw"
-                />
-                <h3 className="text-xl font-bold mb-2 text-primary">
-                  José Eduardo Linhares Ecks
-                </h3>
-                <p className="text-gray-700 dark:text-gray-400">
-                  Apresentador do Programa Matinal, com os programas
-                  &quot;Gêneros&quot; na segunda às 10:00 e &quot;Velharia&quot;
-                  na sexta-feira às 10:00.
-                </p>
-                <p className="text-gray-700 dark:text-gray-400 mt-2">
-                  Tenho trabalhado de radialista a cerca de 1 ano e meio, e como
-                  produtor Musical a mais de 3 anos. Para mim trabalhar com a
-                  RAND é meu ponto de fuga, quando estou fazendo meus programas,
-                  tocando músicas que são de meu gosto, me sinto
-                  mais leve e alegre.
-                </p>
-              </div>
-              <div className="bg-white dark:bg-gray-700 rounded-lg p-6 text-left">
-                <Image
-                  src="/neusadomit.jpg"
-                  alt="Fachada Colégio Neusa Domit"
-                  className="rounded-full w-24 h-24 mb-4"
-                  width={0}
-                  height={0}
-                  sizes="100vw"
-                />
-                <h3 className="text-xl font-bold mb-2 text-primary">
-                  Carlos Alberto Paulek
-                </h3>
-                <p className="text-gray-700 dark:text-gray-400">
-                  Apresentador do Programa Raízes da Música, de segunda a sexta-feira das 19:00h às 20:30h
-                </p>
-                <p className="text-gray-700 dark:text-gray-400 mt-2">
-                Tenho a satisfação de apresentar o programa Raízes da Música. De segunda a sexta-feira, das 19:00 às 20:30, levo até vocês o melhor da música gaúcha, sertanejo e bandinhas do sul do Brasil. Com mais de 30 anos de dedicação ao Colégio Estadual Neusa Domit, encontro no meu programa de rádio uma fonte pura de diversão e alegria. É uma honra compartilhar essas tradições musicais com nossos ouvintes e fazer parte das suas noites. Sintonize e venha celebrar a nossa cultura comigo!
-                </p>
-              </div>
+              {apresentadores.length > 0 ? (
+                apresentadores.map((apresentador: any, index: any) => (
+                  <div
+                    key={index}
+                    className="bg-white dark:bg-gray-700 rounded-lg p-6 text-left"
+                  >
+                    <div className="flex flex-row gap-2 items-center">
+                      <Image
+                        src={
+                          apresentador.fields.imagem
+                            ? `${apresentador.fields.imagem}`
+                            : "/neusadomit.jpg"
+                        }
+                        alt="Foto do Apresentador"
+                        className="rounded-full w-12 h-12 mr-4"
+                        width={48}
+                        height={48}
+                      />
+                      <h3 className="text-xl font-bold mb-2 text-primary">
+                        {apresentador.fields.nome}
+                      </h3>
+                    </div>
+                    <p className="text-gray-700 dark:text-gray-400 mt-2">
+                      {apresentador.fields.descricao}
+                    </p>
+                  </div>
+                ))
+              ) : (
+                <p>Nenhum apresentador encontrado.</p>
+              )}
             </div>
           </div>
         </section>
@@ -393,82 +438,45 @@ export default function Component() {
               className="text-3xl md:text-4xl font-bold mb-4 text-primary"
               id="depoimentos"
             >
-              Opinião dos Nossos Ouvintes
+              {tituloOpiniao}
             </h2>
             <p className="text-gray-700 dark:text-gray-400 mb-8">
-              Escute o que nossos ouvintes satisfeitos têm a dizer sobre sua
-              experiência com nossa estação de rádio escolar.
+              {descricaoOpiniao}
             </p>
             <div className="grid grid-cols-1 gap-6">
-              <div className="bg-white dark:bg-gray-700 rounded-lg p-6 text-left">
-                <blockquote className="mb-4">
-                  <p className="text-gray-700 dark:text-gray-400 italic">
-                    Ah, falar da RAND é vivenciar o sonho que se realizou
-                    através dos meus amigos Vanderlei e Paulek. Trabalho no
-                    Colégio há seis anos e vi uma sala, que era usada somente
-                    para depósito de equipamentos, aos poucos se transformar na
-                    Rádio Ativa Neusa Domit. O objetivo é engajar os alunos
-                    junto à comunidade escolar, e assim está sendo. Mas o mais
-                    importante é a interação e a comunicação em tempo real com a
-                    comunidade. Com o tempo, foram surgindo mais parcerias e
-                    maior engajamento de alunos, professores, direção e
-                    funcionários. O projeto foi crescendo e ganhando novas
-                    dimensões: entrevistas, podcasts e interações. A RAND elevou
-                    a autoestima dos alunos, promovendo inclusão social e
-                    melhorando a capacidade de comunicação e relações. A RAND
-                    oferece uma gama de programas, é minha rádio favorita e veio
-                    pra ficar!
-                  </p>
-                </blockquote>
-                <div className="flex items-center">
-                  <Image
-                    src="/neusadomit.jpg"
-                    alt="Fachada Colégio Neusa Domit"
-                    className="rounded-full w-12 h-12 mr-4"
-                    width={0}
-                    height={0}
-                    sizes="100vw"
-                  />
-                  <div>
-                    <h4 className="text-lg font-bold text-primary">
-                     Rosane Souza
-                    </h4>
-                    <p className="text-gray-700 dark:text-gray-400">
-                      Professora
+              {opinioes.map((opiniao: any, index: any) => (
+                <div
+                  className="bg-white dark:bg-gray-700 rounded-lg p-6 text-left"
+                  key={index}
+                >
+                  <blockquote className="mb-4">
+                    <p className="text-gray-700 dark:text-gray-400 italic">
+                      {opiniao.fields.opiniao}
                     </p>
+                  </blockquote>
+                  <div className="flex items-center">
+                    <Image
+                      src={
+                        opiniao.fields.imagem
+                          ? `${opiniao.fields.imagem}`
+                          : "/neusadomit.jpg"
+                      }
+                      alt="Foto do depoente"
+                      className="rounded-full w-12 h-12 mr-4"
+                      width={48}
+                      height={48}
+                    />
+                    <div>
+                      <h4 className="text-lg font-bold text-primary">
+                        {opiniao.fields.nome}
+                      </h4>
+                      <p className="text-gray-700 dark:text-gray-400">
+                        {opiniao.fields.cargo}
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div className="bg-white dark:bg-gray-700 rounded-lg p-6 text-left">
-                <blockquote className="mb-4">
-                  <p className="text-gray-700 dark:text-gray-400 italic">
-                    Sou ex-radialista da Rádio Neusa Domit, no qual tem um
-                    desempenho fundamental no desenvolvimento do nosso bairro e
-                    comunidade. A rádio oferece uma variedade de programas
-                    divertidos e interessantes, incluindo um programa de
-                    esportes. A equipe é altamente organizada e se dedica a
-                    entreter todos os ouvintes. A Rádio Neusa Domit também
-                    fornece informações reais e relevantes, tornando-se uma
-                    fonte confiável para todos.
-                  </p>
-                </blockquote>
-                <div className="flex items-center">
-                  <Image
-                    src="/neusadomit.jpg"
-                    alt="Fachada Colégio Neusa Domit"
-                    className="rounded-full w-12 h-12 mr-4"
-                    width={0}
-                    height={0}
-                    sizes="100vw"
-                  />
-                  <div>
-                    <h4 className="text-lg font-bold text-primary">Pedro</h4>
-                    <p className="text-gray-700 dark:text-gray-400">
-                      Estudante 8°B
-                    </p>
-                  </div>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </section>
@@ -519,7 +527,15 @@ export default function Component() {
                 <Mail className="h-6 w-6" />
               </Link>
             </div>
-            <a href="http://play.radios.com.br/213965" target="_blank"> <Image src="https://img.radios.com.br/divulgue/app-radiosnet-234x60-a.jpg" alt="Ouça nossa rádio em seu celular ou tablet com Android ou no iPhone e iPads" width="234" height="60"/> </a>
+            <a href="http://play.radios.com.br/213965" target="_blank">
+              {" "}
+              <Image
+                src="https://img.radios.com.br/divulgue/app-radiosnet-234x60-a.jpg"
+                alt="Ouça nossa rádio em seu celular ou tablet com Android ou no iPhone e iPads"
+                width="234"
+                height="60"
+              />{" "}
+            </a>
           </div>
           <div>
             <h3 className="text-xl font-bold mb-4">Localização</h3>
@@ -586,47 +602,6 @@ function InstagramIcon(props: any) {
       <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
       <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
       <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
-    </svg>
-  );
-}
-
-function RadioReceiverIcon(props: any) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M5 16v2" />
-      <path d="M19 16v2" />
-      <rect width="20" height="8" x="2" y="8" rx="2" />
-      <path d="M18 12h0" />
-    </svg>
-  );
-}
-
-function TwitterIcon(props: any) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
     </svg>
   );
 }
