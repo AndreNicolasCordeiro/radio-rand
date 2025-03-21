@@ -209,97 +209,7 @@ export default async function Component() {
                   </CarouselItem>
                   <CarouselItem>
                     <Image
-                      src="/imagem06.jpg"
-                      width={0}
-                      height={0}
-                      sizes="100vw"
-                      alt="Product 1"
-                      className="w-full h-full rounded-md object-cover aspect-[4/3]"
-                    />
-                  </CarouselItem>
-                  <CarouselItem>
-                    <Image
-                      src="/imagem08.jpg"
-                      width={0}
-                      height={0}
-                      sizes="100vw"
-                      alt="Product 1"
-                      className="w-full h-full rounded-md object-cover aspect-[4/3]"
-                    />
-                  </CarouselItem>
-                  <CarouselItem>
-                    <Image
-                      src="/imagem09.jpg"
-                      width={0}
-                      height={0}
-                      sizes="100vw"
-                      alt="Product 1"
-                      className="w-full h-full rounded-md object-cover aspect-[4/3]"
-                    />
-                  </CarouselItem>
-                  <CarouselItem>
-                    <Image
-                      src="/imagem10.jpg"
-                      width={0}
-                      height={0}
-                      sizes="100vw"
-                      alt="Product 1"
-                      className="w-full h-full rounded-md object-cover aspect-[4/3]"
-                    />
-                  </CarouselItem>
-                  <CarouselItem>
-                    <Image
-                      src="/imagem11.jpg"
-                      width={0}
-                      height={0}
-                      sizes="100vw"
-                      alt="Product 1"
-                      className="w-full h-full rounded-md object-cover aspect-[4/3]"
-                    />
-                  </CarouselItem>
-                  <CarouselItem>
-                    <Image
-                      src="/imagem12.jpg"
-                      width={0}
-                      height={0}
-                      sizes="100vw"
-                      alt="Product 1"
-                      className="w-full h-full rounded-md object-cover aspect-[4/3]"
-                    />
-                  </CarouselItem>
-                  <CarouselItem>
-                    <Image
-                      src="/imagem13.jpg"
-                      width={0}
-                      height={0}
-                      sizes="100vw"
-                      alt="Product 1"
-                      className="w-full h-full rounded-md object-cover aspect-[4/3]"
-                    />
-                  </CarouselItem>
-                  <CarouselItem>
-                    <Image
-                      src="/imagem14.jpg"
-                      width={0}
-                      height={0}
-                      sizes="100vw"
-                      alt="Product 1"
-                      className="w-full h-full rounded-md object-cover aspect-[4/3]"
-                    />
-                  </CarouselItem>
-                  <CarouselItem>
-                    <Image
-                      src="/imagem15.jpg"
-                      width={0}
-                      height={0}
-                      sizes="100vw"
-                      alt="Product 1"
-                      className="w-full h-full rounded-md object-cover aspect-[4/3]"
-                    />
-                  </CarouselItem>
-                  <CarouselItem>
-                    <Image
-                      src="/imagem16.jpg"
+                      src="/imagem07.jpg"
                       width={0}
                       height={0}
                       sizes="100vw"
@@ -322,7 +232,7 @@ export default async function Component() {
             <Card>
               <CardContent className="p-4 flex flex-col gap-4">
                 <Image
-                  src="/imagem09.jpg"
+                  src="/imagem01.jpg"
                   width={0}
                   height={0}
                   sizes="100vw"
@@ -343,7 +253,7 @@ export default async function Component() {
             <Card>
               <CardContent className="p-4 flex flex-col gap-4">
                 <Image
-                  src="/imagem01.jpg"
+                  src="/imagem02.jpg"
                   width={0}
                   height={0}
                   sizes="100vw"
@@ -364,7 +274,7 @@ export default async function Component() {
             <Card>
               <CardContent className="p-4 flex flex-col gap-4">
                 <Image
-                  src="/imagem05.jpg"
+                  src="/imagem03.jpg"
                   width={0}
                   height={0}
                   sizes="100vw"
